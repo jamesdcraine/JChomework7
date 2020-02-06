@@ -18,26 +18,26 @@
 
 <div class = "backgroundColorA">
 <div class = "bioBlock">
-    <div class = "avatar"><img src="https://i.pinimg.com/236x/4d/7b/02/4d7b025f6ef3dc6e4fec738a0b0d4038.jpg"></div>
+    <div class = "avatar"><img src="img src="${data.img}" alt="GitHub  Picture"></div>
 <div class = "largerText"><b>Hi!<br>
-My name is Pandy Fackler!</b></div>
-tagline from axios goes here<br>
-location - github - blog 
+My name is ${data.name}</b></div>
+${data.company}<br>
+<a class="nav-link" href="${data.location}"></a> - <a class="nav-link" href="${data.github}"></a> - <a class="nav-link" href="${data.blog}"></a> 
 </div>
 <div class = "whiteSpace"><div class = "zeus">
-    <h2>I burn things and teach children to curse</h2></div>
+    <h2>${data.bio}</h2></div>
 </div>
     <div class = "statCard1"><b>Public Repositories</b><br>
-        145
+        ${data.repos}
     </div>
     <div class = "statCard2"><b>Followers</b><br>
-        145
+        ${data.followers}
     </div>
     <div class = "statCard3"><b>Github Stars</b><br>
-        145
+        ${data.stars}
     </div>
     <div class = "statCard4"><b>Following</b><br>
-        145
+        ${data.following}
     </div>    
 </div>
 
