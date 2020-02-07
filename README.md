@@ -6,12 +6,12 @@ Create a command-line application that dynamically generates a PDF profile from 
 
 The user will be prompted for a favorite color, which will be used as the background color for cards.
 
-#The PDF will be populated with the following:
+##The PDF will be populated with the following:
 
 -Profile image
 -User name
 
-#Links to the following:
+##Links to the following:
 
 -User GitHub profile
 -User blog
