@@ -1,27 +1,32 @@
 # JChomework7
 
-Create a command-line application that dynamically generates a PDF profile from a GitHub username. The application will be invoked with the following command: node index.js
+
+## **Overview**
+Create a command-line application that dynamically generates a PDF profile from a GitHub username. The application will be invoked with the following command: *node index.js*
 
 The user will be prompted for a favorite color, which will be used as the background color for cards.
 
-The PDF will be populated with the following:
+#The PDF will be populated with the following:
 
-Profile image
-User name
-Links to the following:
+-Profile image
+-User name
 
-User location 
-User GitHub profile
-User blog
+#Links to the following:
 
+-User GitHub profile
+-User blog
 
-User bio
-Number of public repositories
-Number of followers
-Number of GitHub stars
-Number of users following
+#And the following data populated:
+
+-User location 
+-User bio
+-Number of public repositories
+-Number of followers
+-Number of GitHub stars
+-Number of users following
 
 Following the common templates for user stories, we can frame this challenge as follows:
+
 AS A product manager
 
 I WANT a developer profile generator
@@ -29,31 +34,24 @@ I WANT a developer profile generator
 SO THAT I can easily prepare reports for stakeholders
 Refer to the design mockup.
 
-Business Context
+##Business Context
 When preparing a report for stakeholders, it is important to have up-to-date information about members of the development team. Rather than navigating to each team member's GitHub profile, a command-line application will allow for quick and easy generation of profiles in PDF format.
 
-Minimum Requirements
+##Minimum Requirements
  
+-Functional, deployed application.
 
-Functional, deployed application.
+-GitHub repository with a unique name and a README describing project.
 
+-The application generates a PDF resume from the user provided GitHub profile.
 
-GitHub repository with a unique name and a README describing project.
+-The generated resume includes a bio image from the user's GitHub profile.
 
+-The generated resume includes the user's location and a link to their GitHub profile.
 
-The application generates a PDF resume from the user provided GitHub profile.
+-The generated resume includes the number of: public repositories, followers, GitHub stars and following count.
 
-
-The generated resume includes a bio image from the user's GitHub profile.
-
-
-The generated resume includes the user's location and a link to their GitHub profile.
-
-
-The generated resume includes the number of: public repositories, followers, GitHub stars and following count.
-
-
-The background color of the generated PDF matches the color that the user provides.
+-The background color of the generated PDF matches the color that the user provides.
 
 
 GIVEN the developer has a GitHub profile
@@ -62,5 +60,12 @@ WHEN prompted for the developer's GitHub username and favorite color
 
 THEN a PDF profile is generated
 
+------------------------------------------------------------
+
+running the program in node
+
 <img src="assets/node_run_animated.gif" alt="animated gif of running program">
+
+opening the generated PDF
+
 <img src="assets/opening_generated_pdf.gif" alt="animated gif opening generated pdf">
