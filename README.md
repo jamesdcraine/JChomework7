@@ -32,7 +32,9 @@ The user will be prompted for a favorite color, which will be used as the backgr
 -Number of users following
 
 
+
 Following the common templates for user stories, we can frame this challenge as follows:
+
 
 AS A product manager
 
@@ -59,6 +61,7 @@ When preparing a report for stakeholders, it is important to have up-to-date inf
 -The generated resume includes the number of: public repositories, followers, GitHub stars and following count.
 
 -The background color of the generated PDF matches the color that the user provides.
+
 
 
 GIVEN the developer has a GitHub profile
