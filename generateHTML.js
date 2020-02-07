@@ -1,46 +1,47 @@
-const colors = {
-    red: {
-        backgroundColorA: "red";
-        backgroundColorB: "red";
-    },
-    green: {
-        backgroundColorA: "green";
-        backgroundColorB: "green";
-    },
-    blue: {
-        backgroundColorA: "blue";
-        backgroundColorB: "blue";
-    },
-    orange: {
-        backgroundColorA: "orange";
-        backgroundColorB: "orange";
-    },
-    yellow: {
-        backgroundColorA: "yellow";
-        backgroundColorB: "yellow";
-    },
-    brown: {
-        backgroundColorA: "brown";
-        backgroundColorB: "brown";
-    },
-    purple: {
-        backgroundColorA: "purple";
-        backgroundColorB: "purple";
-    }
-  };
+// const data = require("./index.js")
+
+// const colors = {
+//     red: {
+//         backgroundColorA: "red",
+//         backgroundColorB: "red"
+//     },
+//     green: {
+//         backgroundColorA: "green",
+//         backgroundColorB: "green"
+//     },
+//     blue: {
+//         backgroundColorA: "blue",
+//         backgroundColorB: "blue"
+//     },
+//     orange: {
+//         backgroundColorA: "orange",
+//         backgroundColorB: "orange"
+//     },
+//     yellow: {
+//         backgroundColorA: "yellow",
+//         backgroundColorB: "yellow"
+//     },
+//     brown: {
+//         backgroundColorA: "brown",
+//         backgroundColorB: "brown"
+//     },
+//     purple: {
+//         backgroundColorA: "purple",
+//         backgroundColorB: "purple"
+//     }
+//   };
 
 function generateHTML(data) {
-    return '<!DOCTYPE html>'
-    <html lang="en">
-<head>
-    <meta charset="UTF-8">
+    return `<!DOCTYPE html>
+<html lang = "en"> 
+
+<head> 
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!-- added jquery -->
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <!-- add google fonts -->
 <link href="https://fonts.googleapis.com/css?family=Pridi&display=swap" rel="stylesheet">
-<!-- add my css  -->
+
     <title>PDF Document</title>
     <style>
 
@@ -54,14 +55,14 @@ function generateHTML(data) {
     position: relative;
     width: 100%;
     height: 33%;
-    background-color: ${colors[data.color].backgroundColorA};
+    background-color: teal;
 }
 
 .backgroundColorB {
     position: relative;
     width: 100%;
     height: 33%;
-    background-color: ${colors[data.color].backgroundColorB};
+    background-color: brown;
     top: 66%;      
     }
 
@@ -71,9 +72,13 @@ function generateHTML(data) {
     height: 400px;
     top: 33%;
     background-color: rgb(238, 232, 232);
-
-
 }
+
+a, a:hover {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    }
     
 .avatar {
     position: relative;   
@@ -84,8 +89,7 @@ function generateHTML(data) {
     font-family: 'Pridi', serif;
     font-size: 32px;
     vertical-align: middle;
-    line-height: 35px; 
-    
+    line-height: 35px;     
 }
 
 .bioBlock {
@@ -212,11 +216,9 @@ img {
 </head>
 <body>
 <div class = "container">
-
-
 <div class = "backgroundColorA">
 <div class = "bioBlock">
-    <div class = "avatar"><img src="img src="${data.img}" alt="GitHub  Picture"></div>
+    <div class = "avatar"><img src="${data.img}" alt="GitHub Picture"></div>
 <div class = "largerText"><b>Hi!<br>
 My name is ${data.name}</b></div>
 ${data.company}<br>
@@ -249,4 +251,6 @@ ${data.company}<br>
 
     
 </body>
-</html>
+</html>`
+}
+exports.generateHTML = generateHTML;

@@ -1,10 +1,12 @@
 // setting required npm packages
 
-const inquirer = require("inquirer");
+const inquirer = require('inquirer');
 const axios = require('axios').default;
-const htmlMaker = require('.generateHTML.js');
+var http = require('http'),
+  request = require('request');
+const htmlMaker = require('./generateHTML');
 const fs = require('fs'),
-convertFactory = require('electron-html-to'); 
+  convertFactory = require('electron-html-to'); 
 const conversion = convertFactory({
   converterPath: convertFactory.converters.PDF
 });
@@ -13,7 +15,7 @@ const conversion = convertFactory({
 const questions = [
   {
     type: "input",
-    name: "name",
+    name: "username",
     message: "What is your Github username?"
   },
   {
@@ -30,41 +32,50 @@ const questions = [
       "Purple"
     ]
   }
+
+];
 const data = {};
 
-function getCount() {
-    return (axios
-     .get('https//api.github.com/users/${data.username}/starred') 
-      .then(function (resp) {
-        data.stars = resp.data.length;
+http.createServer(function(req, res) {
+  // i will never respond to any requests. muahahaha!!
+}).listen(3000).unref();
+request({ uri: 'http://localhost:3000', timeout: 100 })
+  .on('error', console.error.bind(console, 'error =>'))
+  .on('end', console.log.bind(console, 'never gonna happen :('))
+;
 
-      }));
-    }
+// function getCount() {
+//     return (axios
+//      .get(`https//api.github.com/users/${data.login}/starred`) 
+//       .then(function (resp) {
+//         data.stars = resp.data.length;
+
+//       }));
+//     }
 
 function init(){
 
   inquirer.prompt(questions)
   .then(function (response) {
-    data.username = response.username.trim();
+    data.login = response.login;
     data.color = response.color;
 
-}
+  })
  axios
-  .get(`https://api.github.com/users/${data.username}`)
+  .get(`https://api.github.com/users/${data.login}`)
   .then(async function (resp) {
         let response = resp.data;
-
           data.bio = response.bio;
+          data.location = response.location;
           data.followers = response.followers;
           data.following = response.following;
           data.repos = response;
-          data.location = response.location);
           data.blog = response.blog;
           data.name = response.login;      
           data.img = response['avatar_url'];
-          data.github = `https://www.github.com/${data.username}/`;
-
-          await getCount();
+          data.github = `https://www.github.com/${data.login}/`;
+  
+          await getStars();
         })
         .catch(function (error) {
             console.log(error);
@@ -79,13 +90,10 @@ function init(){
                 }
 
                 result.stream.pipe(fs.createWriteStream('./profile.pdf'));
-               
-                console.log('PDF created')
+                console.log('PDF created');
                 conversion.kill();
             });
         });
-
-})
 
 
 }

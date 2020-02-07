@@ -1,0 +1,29 @@
+{
+  "name": "jchomework7",
+  "version": "1.0.0",
+  "description": "profile generator",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "conversion": "^1.2.3",
+    "electron": "^8.0.0",
+    "electron-html-to": "^2.6.0",
+    "http": "0.0.0",
+    "inquirer": "^7.0.4",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesdcraine/JChomework7.git"
+  },
+  "author": "James Craine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesdcraine/JChomework7/issues"
+  },
+  "homepage": "https://github.com/jamesdcraine/JChomework7#readme"
+}
