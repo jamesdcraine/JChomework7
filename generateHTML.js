@@ -1,256 +1,239 @@
-const data = require("./index.js")
-
 const colors = {
-    red: {
-        backgroundColorA: "red",
-        backgroundColorB: "red"
-    },
+  
     green: {
-        backgroundColorA: "green",
-        backgroundColorB: "green"
-    },
-    blue: {
-        backgroundColorA: "blue",
-        backgroundColorB: "blue"
-    },
-    orange: {
-        backgroundColorA: "orange",
-        backgroundColorB: "orange"
-    },
-    yellow: {
-        backgroundColorA: "yellow",
-        backgroundColorB: "yellow"
-    },
-    brown: {
-        backgroundColorA: "brown",
-        backgroundColorB: "brown"
-    },
-    purple: {
-        backgroundColorA: "purple",
-        backgroundColorB: "purple"
-    }
-  };
+        wrapperBackground: "lightgrey",
+        headerBackground: "lawngreen",
+        headerColor: "black",
+        photoBorderColor: "black"
+      },
+      blue: {
+        wrapperBackground: "blue",
+        headerBackground: "teal",
+        headerColor: "white",
+        photoBorderColor: "purple"
+      },
+      pink: {
+        wrapperBackground: "lightpink",
+        headerBackground: "magenta",
+        headerColor: "white",
+        photoBorderColor: "yellowgreen"
+      },
+      red: {
+        wrapperBackground: "brown",
+        headerBackground: "red",
+        headerColor: "white",
+        photoBorderColor: "white"
+      },
+      orange: {
+        wrapperBackground: "orange",
+        headerBackground: "orangered",
+        headerColor: "white",
+        photoBorderColor: "black"
+      },
+      saffron: {
+        wrapperBackground: "yellow",
+        headerBackground: "grey",
+        headerColor: "white",
+        photoBorderColor: "white"
+      }
+};
+
 
 function generateHTML(data) {
-    return `<!DOCTYPE html>
-<html lang = "en"> 
-
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!-- add google fonts -->
-<link href="https://fonts.googleapis.com/css?family=Pridi&display=swap" rel="stylesheet">
-
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme|Cabin&display=swap" rel="stylesheet">
     <title>PDF Document</title>
     <style>
+          @page {
+            margin: 0;
+          }
+         *,
+         *::after,
+         *::before {
+         box-sizing: border-box;
+         }
+         html, body {
+         padding: 0;
+         margin: 0;
+         }
+         html, body, .wrapper {
+         height: 100%;
+         }
+         .wrapper {
+         background-color: ${colors[data.color].wrapperBackground};
+         padding-top: 100px;
+         }
+         body {
+         background-color: white;
+         -webkit-print-color-adjust: exact !important;
+         font-family: 'Cabin', sans-serif;
+         }
+         main {
+         background-color: #E9EDEE;
+         height: auto;
+         padding-top: 30px;
+         }
+         h1, h2, h3, h4, h5, h6 {
+         font-family: 'BioRhyme', serif;
+         margin: 0;
+         }
+         h1 {
+         font-size: 3em;
+         }
+         h2 {
+         font-size: 2.5em;
+         }
+         h3 {
+         font-size: 2em;
+         }
+         h4 {
+         font-size: 1.5em;
+         }
+         h5 {
+         font-size: 1.3em;
+         }
+         h6 {
+         font-size: 1.2em;
+         }
+         .photo-header {
+         position: relative;
+         margin: 0 auto;
+         margin-bottom: -50px;
+         display: flex;    
+         flex-wrap: wrap;
+         background-color: ${colors[data.color].headerBackground};
+         color: ${colors[data.color].headerColor};
+         padding: 10px;
+         width: 95%;
+         border-radius: 6px;
+         }
+         .photo-header img {
+         width: 250px;
+         height: 250px;
+         border-radius: 50%;    
+         object-fit: cover;
+         margin-top: -75px;
+         border: 6px solid ${colors[data.color].photoBorderColor};
+         box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
+         }
+         .photo-header h1, .photo-header h2 {
+         width: 100%;
+         text-align: center;
+         }
+         .photo-header h1 {
+         margin-top: 10px;
+         }
+         .links-nav {
+         width: 100%;
+         text-align: center;
+         padding: 20px 0;
+         font-size: 1.1em;
+         }
+         .nav-link {
+         display: inline-block;
+         margin: 5px 10px;
+         }
+         .workExp-date {
+         font-style: italic;
+         font-size: .7em;
+         text-align: right;
+         margin-top: 10px;
+         }
+         .container {
+         padding: 50px;
+         padding-left: 100px;
+         padding-right: 100px;
+         }
+         .row {
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: space-between;
+           margin-top: 20px;
+           margin-bottom: 20px;
+         }
+         .card {
+           padding: 45px;
+           width: 800px;           
+           height: 180px;      
+           border-radius: 6px;
+           background-color: ${colors[data.color].headerBackground};
+           color: ${colors[data.color].headerColor};
+           margin: 20px;
+         }
 
-.container {
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Pridi', serif;
-}
+         .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+          }
+         
+         .col {
+         flex: 1;
+         text-align: center;
+         }
 
-.backgroundColorA {
-    position: relative;
-    width: 100%;
-    height: 33%;
-    background-color: teal;
-}
-
-.backgroundColorB {
-    position: relative;
-    width: 100%;
-    height: 33%;
-    background-color: brown;
-    top: 66%;      
-    }
-
-.whiteSpace {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    top: 33%;
-    background-color: rgb(238, 232, 232);
-}
-
-a, a:hover {
-    text-decoration: none;
-    color: inherit;
-    font-weight: bold;
-    }
-    
-.avatar {
-    position: relative;   
-    z-index: 999;    
-}
-
-.largerText {
-    font-family: 'Pridi', serif;
-    font-size: 32px;
-    vertical-align: middle;
-    line-height: 35px;     
-}
-
-.bioBlock {
-    position: relative;
-    top: 70px;
-    height: 400px;
-    width: 1250px;
-    background-color: #ff8374;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    z-index: 998;
-    border-radius: 5px;
-    color: white;
-    vertical-align: middle;
-    line-height: 40px; 
-
-}
-
-img {
-    position: relative;
-    border-radius: 50%;
-    top: -10px;
-    height: 200px;
-    width: 200px;
-    z-index: 999;
-    border: solid 3px yellow;
-    box-shadow: 1px 4px 0 0 rgba(12, 2, 2, 0.308);
-    box-shadow: 0px 0px 5px 4px  rgba(12, 2, 2, 0.308);
-    
-  }
-
-  .zeus {
-      position: relative;
-      height: 40px;
-      width: 700px;
-      top: 70px;    
-      margin-left: auto;
-      margin-right: auto;
-      z-index: 1000;
-      text-align: center;
-      background-color: rgb(238, 232, 232);
-
-  }
-
-  .statCard1 {
-    position: relative;
-    height: 90px;
-    width: 375px;
-    background-color: #ff8374;
-    top: -280px;    
-    margin-left: auto;
-    margin-right: auto;
-    right: 200px;
-    z-index: 1000;
-    text-align: center;
-    border-radius: 5px;
-    color: white;
-    vertical-align: middle;
-    line-height: 40px; 
-    font-family: 'Pridi', serif;
-    font-size: 24px;
-
-
-}
-.statCard2 {
-    position: relative;
-    height: 90px;
-    width: 375px;
-    background-color: #ff8374;
-    top: -370px;    
-    right: -190px; 
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 1000;
-    text-align: center;
-    border-radius: 5px;
-    color: white;
-    vertical-align: middle;
-    line-height: 40px; 
-    font-family: 'Pridi', serif;
-    font-size: 24px;
-
-}
-.statCard3 {
-    position: relative;
-    height: 90px;
-    width: 375px;
-    background-color: #ff8374;
-    top: -354px;    
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-    right: 200px;
-    z-index: 1000;
-    text-align: center;
-    border-radius: 5px;
-    color: white;
-    vertical-align: middle;
-    font-family: 'Pridi', serif;
-    line-height: 40px; 
-    font-size: 24px;
-}
-.statCard4 {
-    position: relative;
-    height: 90px;
-    width: 375px;
-    background-color: #ff8374;
-    top: -444px;    
-    right: -190px; 
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 1000;
-    text-align: center;
-    border-radius: 5px;
-    color: white;
-    vertical-align: middle;
-    line-height: 40px; 
-    font-family: 'Pridi', serif;
-    font-size: 24px;
-}
-</style>
+         a, a:hover {
+         text-decoration: none;
+         color: inherit;
+         font-weight: bold;
+         }
+         @media print { 
+          body { 
+            zoom: .75; 
+          } 
+         }
+      </style>
 </head>
 <body>
-<div class = "container">
-<div class = "backgroundColorA">
-<div class = "bioBlock">
-    <div class = "avatar"><img src="${data.img}" alt="GitHub Picture"></div>
-<div class = "largerText"><b>Hi!<br>
-My name is ${data.name}</b></div>
-${data.company}<br>
-<a class="nav-link" href="${data.location}"></a> - <a class="nav-link" href="${data.github}"></a> - <a class="nav-link" href="${data.blog}"></a> 
-</div>
-<div class = "whiteSpace"><div class = "zeus">
-    <h2>${data.bio}</h2></div>
-</div>
-    <div class = "statCard1"><b>Public Repositories</b><br>
-        ${data.repos}
+    <div class="wrapper">
+        <div class="photo-header">
+            <img src="${data.avatar}" alt="GitHub Profile Picture" class="center">
+            <h1>Hi!</h1>
+            <h1>My name is ${data.login}</h1>          
+            <nav class="links-nav">
+                ${data.location} --
+                <a class="nav-link" href="${data.github}">Github</a> --
+                ${data.blog ? `<a class="nav-link" href="${data.blog}">Blog</a>` : ''}
+            </nav>
+        </div>
+        <main class="container"> 
+            <div class="row">
+                <div class="col">
+                    <h2>${data.bio}</h2>
+                </div>
+            </div>
+           <div class="row">
+                <div class="card col">
+                    <h2>Public Repositories</h2>
+                    <h1>8</h1>
+                </div>
+                <div class="card col">
+                    <h2>Followers</h2>
+                    <h1>21</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card col">
+                    <h2>GitHub Stars</h2>
+                    <h1>0</h1>
+                </div>
+                <div class="card col">
+                    <h2>Following</h2>
+                    <h1>29</h1>
+                </div>
+            </div>
+        </main>
     </div>
-    <div class = "statCard2"><b>Followers</b><br>
-        ${data.followers}
-    </div>
-    <div class = "statCard3"><b>Github Stars</b><br>
-        ${data.stars}
-    </div>
-    <div class = "statCard4"><b>Following</b><br>
-        ${data.following}
-    </div>    
-</div>
-
-<div class = "backgroundColorB">
-    
-</div>
-
-
-
-</div>
-
-    
 </body>
 </html>`
 }
+
+
 exports.generateHTML = generateHTML;
