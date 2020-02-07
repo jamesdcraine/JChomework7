@@ -32,6 +32,7 @@ The user will be prompted for a favorite color, which will be used as the backgr
 -Number of users following
 
 
+----------------------------------------------------------------
 
 Following the common templates for user stories, we can frame this challenge as follows:
 
@@ -41,6 +42,7 @@ AS A product manager
 I WANT a developer profile generator
 
 SO THAT I can easily prepare reports for stakeholders
+
 Refer to the design mockup.
 
 ## Business Context
