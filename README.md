@@ -8,21 +8,29 @@ The user will be prompted for a favorite color, which will be used as the backgr
 ## The PDF will be populated with the following:
 
 -Profile image
+
 -User name
 
 ## Links to the following:
 
 -User GitHub profile
+
 -User blog
 
 # And the following data populated:
 
 -User location 
+
 -User bio
+
 -Number of public repositories
+
 -Number of followers
+
 -Number of GitHub stars
+
 -Number of users following
+
 
 Following the common templates for user stories, we can frame this challenge as follows:
 
