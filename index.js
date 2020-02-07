@@ -2,8 +2,6 @@
 
 const inquirer = require('inquirer');
 const axios = require('axios').default;
-var http = require('http'),
-  request = require('request');
 const htmlMaker = require('./generateHTML');
 const fs = require('fs'),
   convertFactory = require('electron-html-to'); 
@@ -36,22 +34,14 @@ const questions = [
 ];
 const data = {};
 
-http.createServer(function(req, res) {
-  // i will never respond to any requests. muahahaha!!
-}).listen(3000).unref();
-request({ uri: 'http://localhost:3000', timeout: 100 })
-  .on('error', console.error.bind(console, 'error =>'))
-  .on('end', console.log.bind(console, 'never gonna happen :('))
-;
+function getStars() {
+    return (axios
+     .get(`https//api.github.com/users/${data.login}/starred_url`) 
+      .then(function (resp) {
+        data.stars = resp.data.length;
 
-// function getCount() {
-//     return (axios
-//      .get(`https//api.github.com/users/${data.login}/starred`) 
-//       .then(function (resp) {
-//         data.stars = resp.data.length;
-
-//       }));
-//     }
+      }));
+    }
 
 function init(){
 

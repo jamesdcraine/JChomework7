@@ -4,3 +4,5 @@ homework7
     // background-color: ${colors[data.color].backgroundColorA};
 
         // background-color: ${colors[data.color].backgroundColorB};
+
+        <img src="screenshot.jpg">

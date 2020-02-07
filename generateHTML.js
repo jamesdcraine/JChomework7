@@ -1,35 +1,35 @@
-// const data = require("./index.js")
+const data = require("./index.js")
 
-// const colors = {
-//     red: {
-//         backgroundColorA: "red",
-//         backgroundColorB: "red"
-//     },
-//     green: {
-//         backgroundColorA: "green",
-//         backgroundColorB: "green"
-//     },
-//     blue: {
-//         backgroundColorA: "blue",
-//         backgroundColorB: "blue"
-//     },
-//     orange: {
-//         backgroundColorA: "orange",
-//         backgroundColorB: "orange"
-//     },
-//     yellow: {
-//         backgroundColorA: "yellow",
-//         backgroundColorB: "yellow"
-//     },
-//     brown: {
-//         backgroundColorA: "brown",
-//         backgroundColorB: "brown"
-//     },
-//     purple: {
-//         backgroundColorA: "purple",
-//         backgroundColorB: "purple"
-//     }
-//   };
+const colors = {
+    red: {
+        backgroundColorA: "red",
+        backgroundColorB: "red"
+    },
+    green: {
+        backgroundColorA: "green",
+        backgroundColorB: "green"
+    },
+    blue: {
+        backgroundColorA: "blue",
+        backgroundColorB: "blue"
+    },
+    orange: {
+        backgroundColorA: "orange",
+        backgroundColorB: "orange"
+    },
+    yellow: {
+        backgroundColorA: "yellow",
+        backgroundColorB: "yellow"
+    },
+    brown: {
+        backgroundColorA: "brown",
+        backgroundColorB: "brown"
+    },
+    purple: {
+        backgroundColorA: "purple",
+        backgroundColorB: "purple"
+    }
+  };
 
 function generateHTML(data) {
     return `<!DOCTYPE html>
