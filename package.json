@@ -4,7 +4,7 @@
   "description": "profile generator",
   "main": "index.js",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "conversion": "^1.2.3",
     "electron": "^8.0.0",
     "electron-html-to": "^2.6.0",
